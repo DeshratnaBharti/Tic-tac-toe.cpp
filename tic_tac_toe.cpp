@@ -1,4 +1,6 @@
 #include<iostream>
+#include<cstdlib>
+#include<limits>
 
 using namespace std;
 
@@ -71,13 +73,21 @@ void game() {
     for (int i = 0; i < 9; i++) {
         cout << "Player " << currentPlayer << "'s turn. Enter your slot (1-9): ";
         int slot;
-        cin >> slot;
-
-        //  slot valid hai ki nahi
-        if (slot < 1 || slot > 9) {
-            cout << "Not a valid slot, Try again.\n";
-            i--;
-            continue;
+        
+        // Ensure that input is a valid integer
+        while (true) {
+            if (cin >> slot) {
+                if (slot < 1 || slot > 9) {
+                    cout << "Not a valid slot. Enter a number between 1 and 9: ";
+                    continue;
+                }
+                break;
+            } else {
+                // agar input integer nahi hai ya limit se jayada hai to uske liye streamsize ka use karege
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid input. Please enter a valid number between 1 and 9: ";
+            }
         }
 
         // Check karo slot pahle se occupied nahi na hai
