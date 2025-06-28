@@ -16,8 +16,8 @@ This is a simple 2-player console-based Tic-Tac-Toe game written in C++. Players
 
 Make sure you have a C++ compiler installed (like `g++`).
 
-### Compile:
-```bash
-g++ -o tic_tac_toe.cpp
+
+
+
 
 
