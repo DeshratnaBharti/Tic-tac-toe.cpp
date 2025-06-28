@@ -18,6 +18,6 @@ Make sure you have a C++ compiler installed (like `g++`).
 
 ### Compile:
 ```bash
-g++ -o tictactoe tictactoe.cpp
+g++ -o tic_tac_toe.cpp
 
 
